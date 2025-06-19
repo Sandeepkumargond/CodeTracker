@@ -1,8 +1,9 @@
 # CodeTracker
 
-CodeTracker is a full-stack web application for managing student information. This project is organized into two main parts: a backend (Node.js/Express) and a frontend (Next.js/React).
+CodeTracker is a full-stack web application for managing student information. This project is organized into two main parts: a backend (Node.js/Express) and a frontend (Next.js).
 
-
+Backend API: <a>https://codetracker-2jmx.onrender.com/</a>
+frontend : <a>https://code-tracker-chi.vercel.app/</a>
 ---
 
 ## Project Structure
