@@ -1,13 +1,67 @@
-# StudManage
+# CodeTracker
 
-StudManage is a full-stack web application for managing student information. This project is organized into two main parts: a backend (Node.js/Express) and a frontend (Next.js/React).
+CodeTracker is a full-stack web application for managing student information. This project is organized into two main parts: a backend (Node.js/Express) and a frontend (Next.js/React).
 
----
+
 ---
 
 ## Project Structure
 
+
+
 ```
+CodeTracker-frontend/
+├── public/
+│   └── favicon.ico
+│
+├── src/
+│   ├── app/                          # App Router (Next.js 13+)
+│   │   ├── layout.tsx                # Main layout (theme provider, header/footer)
+│   │   ├── page.tsx                  # Home page (redirect to /students or dashboard)
+│   │   └── students/
+│   │       ├── page.tsx             # Student Table View
+│   │       └── [id]/
+│   │           └── page.tsx         # Individual Student Profile Page
+│   │
+│   ├── components/                   # Reusable UI components
+│   │   ├── StudentTable.tsx
+│   │   ├── StudentFormModal.tsx     # Add/Edit modal
+│   │   ├── StudentProfile.tsx
+│   │   ├── Charts/
+│   │   │   ├── RatingGraph.tsx
+│   │   │   ├── DifficultyBarChart.tsx
+│   │   │   └── SubmissionHeatmap.tsx
+│   │   ├── UI/
+│   │   │   ├── DarkModeToggle.tsx
+│   │   │   ├── FilterDropdown.tsx
+│   │   │   └── ExportCSVButton.tsx
+│   │
+│   ├── constants/
+│   │   └── dummyData.ts              # Temporary mock student/contest/problem data
+│   │
+│   ├── context/
+│   │   └── ThemeContext.tsx          # Optional for dark/light mode
+│   │
+│   ├── lib/                          # Utilities
+│   │   ├── csv.ts                    # CSV export logic
+│   │   ├── dateFilters.ts            # Time-based filtering (7/30/90/365)
+│   │   └── theme.ts                  # Theme persistence/localStorage handling
+│   │
+│   ├── styles/
+│   │   └── globals.css               # Tailwind CSS & custom styles
+│   │
+│   └── types/
+│       └── index.ts                  # Type definitions for Student, Contest, etc.
+│
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+└── README.md
+
+
+
 .
 backend/
 ├── config/
@@ -21,18 +75,8 @@ backend/
 │   ├── leaderboardRoutes.js
 │   └── studentRoutes.js
 ├── utils/
-│   └── inactivityEmail.js
-|
-└── frontend/
-    ├── app/
-    │   ├── layout.js
-    │   ├── page.js
-    │   └── globals.css
-    ├── public/
-    ├── package.json
-    ├── next.config.mjs
-    ├── tailwindcss/
-    └── .next/
+    └── inactivityEmail.js
+
 ```
 
 ---
